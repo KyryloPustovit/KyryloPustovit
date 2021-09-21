@@ -23,4 +23,4 @@ while True:
         break
 
 print('До новых встреч!')
-input()
+
