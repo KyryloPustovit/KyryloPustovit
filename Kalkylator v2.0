@@ -1,0 +1,17 @@
+x = float(input("Введіть перше число"))
+correct_choice = False
+while not correct_choice:
+    choice = input("Введить операцію : /, *, -, +>>")
+    if choice == "/" or choice =="*" or choice =="-" or choice =="+":
+        correct_choice =True
+    else:
+        print("Неправильний знак операції, спробуйте ще раз")
+y = float(input("Введіть друге число"))
+if choice == '/':
+    print(x/y)
+elif choice == '*':
+    print(x*y)
+elif choice == '-':
+    print(x-y)
+elif choice == '+':
+    print(x+y)
