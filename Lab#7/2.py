@@ -25,7 +25,7 @@ plt.xlabel('Символ')
 plt.ylabel('частота')
 plt.xticks(a.index)
 plt.title('Частота символів')
-plt.savefig('Histogram_Lab#7_task2.png', bbox_inches ='tight' )
+plt.savefig('Histogram_Lab#7_task2.png')
 
 
 plt.show()
