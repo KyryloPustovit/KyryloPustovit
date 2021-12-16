@@ -3,7 +3,7 @@ from prettytable import PrettyTable
 import csv
 import matplotlib.pyplot as plt
 from prettytable import PrettyTable
-
+import excel2json
 
 
 #Інформація таблиці
@@ -119,3 +119,39 @@ f.close()
 def save_txt():
     ("Tablitsa.txt")
 
+
+#JSON
+
+#Читання файлу
+def read_file(path):
+    file = open(path, 'r', encoding= 'utf-8')
+    data = file.read()
+    file.close()
+
+    arr = data.split('\n')
+    for i in range(len(arr)):
+        arr[i] = arr[i].split(',')
+
+    return arr
+
+#Допис у файл
+def write_file(s,path):
+    file = open(path, 'w', encoding = 'utf-8')
+    file.write(s)
+    file.close()
+
+#***
+def tables():
+    table1 = read_file('Tablitsa.txt')
+    
+    return table1
+
+#Збереження в .json
+def save_json():
+    table = tables()
+    arr = []
+
+    for row in table:
+        arr.append('",\n\t\t"'.join(row))
+
+    write_file('[\n\t[\n\t\t"' + '"\n\t], [\n\t\t"'.join(arr) + '"\n\t]\n]', 'Tablitsa.json')

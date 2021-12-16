@@ -1,10 +1,10 @@
 #Import
 from tkinter import *
-from func import graphic,Tablitsa,save_Exel,save_txt
+from func import graphic,Tablitsa,save_Exel,save_txt,save_json
 
 #Вікно з кнопками
 root = Tk()
-root.geometry("210x160")
+root.geometry("210x190")
 root.resizable(False, False)
 root.configure(bg = "#7F7E7E")
 
@@ -28,5 +28,10 @@ btn3.place(x = 35, y = 80, width = 150, height = 30)
 btn4 = Button(root)
 btn4.configure(bg = '#5A5959', fg = 'white', text = 'Зберегти таблицю в .txt', command = save_txt)
 btn4.place(x = 35, y = 110, width = 150, height = 30)
+
+#Кнопка "Зберегти таблицю в .json"
+btn5= Button(root)
+btn5.configure(bg = '#5A5959', fg = 'white', text = 'Зберегти таблицю в .json', command = save_json)
+btn5.place(x = 35, y = 140, width = 150, height = 30)
 
 root.mainloop()
